@@ -6,15 +6,28 @@
     padding: 0;
 }
 
+#loginTitle {
+    color: #3E84Dc;
+}
 .btn-login {
-    background-color: #761f79;
+    background-color: #3E84DC;
     width: 100%;
     color: #fff;
 }
 
 .btn-login:hover {
-    background-color: #F21667;
+    background-color: #04D486;
     color:#fff;
+}
+
+.btn-artigo {
+    background-color: #3E84DC;
+    color: #fff;
+}
+
+.btn-artigo:hover {
+    background-color: #04D486;
+    color: #fff;
 }
 
 .panel {
@@ -22,6 +35,10 @@
 }
 
 .panel-heading {
-    background-color: #F21667;
+    background-color: #3E84DC;
     text-align: center;
+}
+
+.img-artigo {
+    float: left;
 }
