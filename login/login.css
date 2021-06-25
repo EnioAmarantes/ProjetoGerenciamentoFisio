@@ -1,0 +1,27 @@
+.artigos {
+    display: flex;
+    background-color: #616161;
+    min-height: 100vh;
+    color: white;
+    padding: 0;
+}
+
+.btn-login {
+    background-color: #761f79;
+    width: 100%;
+    color: #fff;
+}
+
+.btn-login:hover {
+    background-color: #F21667;
+    color:#fff;
+}
+
+.panel {
+    width: 100%;
+}
+
+.panel-heading {
+    background-color: #F21667;
+    text-align: center;
+}
