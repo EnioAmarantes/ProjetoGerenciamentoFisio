@@ -1,3 +1,6 @@
+body {
+    background-color: #f7f7f7;
+}
 section {
     display: block;
 }
@@ -5,4 +8,15 @@ section {
 a {
     display: block;
     margin: 10px;
+}
+
+.btn-login {
+    background-color: #3E84DC;
+    width: 100%;
+    color: #fff;
+}
+
+.btn-login:hover {
+    background-color: #04D486;
+    color:#fff;
 }
