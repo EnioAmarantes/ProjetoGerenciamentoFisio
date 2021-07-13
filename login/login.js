@@ -11,7 +11,7 @@ function login(){
     var pass = btoa(document.forms["login"]["password"].value);
 
     if(document.forms["login"]["email"].value === "teste" && pass === "MTIz")
-        window.location = ("../pacientes/paciente.html")
+        window.location = ("./pacientes/paciente.html")
     else
         alert("Não funcionou o login");
 }
