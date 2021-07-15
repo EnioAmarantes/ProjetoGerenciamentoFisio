@@ -1,6 +1,10 @@
 var editMode = false;
 var indexRow = 0;
 
+var images = [];
+var foto = document.getElementById("avatar");
+const avatarUrl = "../compartilhado/images/avatares/avatar-002.jpg";
+
 const imgOpt = {
     types: [
         {
@@ -15,13 +19,16 @@ const imgOpt = {
 };
 
 async function tireFoto(){
-    var foto = document.getElementById("avatar");
+    let file = await window.showOpenFilePicker(imgOpt);
 
-    var file = await window.showOpenFilePicker(imgOpt);
+    let newFoto = await file[0].getFile();
+    images[indexRow] = newFoto;
 
-    var newFoto = await file[0].getFile();
-
-    foto.src = "D:\\Imagens\\Photo\\" + newFoto.name;
+    let reader = new FileReader();
+    reader.readAsDataURL(newFoto);
+    reader.onload = function(event) {
+        foto.src = event.target.result;
+    }
 }
 
 function registra(){
@@ -43,6 +50,7 @@ function addPaciente(idTabela){
     var celProxConsulta = linha.insertCell(3);
 
     var celOpcao = linha.insertCell(4);
+    celOpcao.className = "text-center"
 
     celNome.innerHTML = document.getElementById("nomePaciente").value;
     celIdade.innerHTML = document.getElementById("idadePaciente").value;
@@ -80,11 +88,26 @@ function updatePaciente(idTabela){
     voltaForm();
 }
 
+function edit(paciente){
+    editPaciente(paciente);
+}
+
+function del(paciente){
+    delPaciente(paciente);
+}
+
 function editPaciente(paciente){
     editMode = true;
     indexRow = paciente.parentNode.parentNode.rowIndex;
     changeButton();
     var items = paciente.parentNode.parentNode.cells;
+
+    let reader = new FileReader();
+    reader.readAsDataURL(images[indexRow -1]);
+    reader.onload = function(event) {
+        foto.src = event.target.result;
+    }
+
     document.getElementById("nomePaciente").value = items.item(0).innerHTML;
     document.getElementById("idadePaciente").value = items.item(1).innerHTML;
     document.getElementById("tratamento").value = items.item(2).innerHTML;
@@ -92,6 +115,9 @@ function editPaciente(paciente){
 }
 
 function delPaciente(paciente){
+    if(editMode)
+        return;
+
     var i = paciente.parentNode.parentNode.rowIndex;
     document.getElementById("pacientesTab").deleteRow(i);
 }
@@ -104,6 +130,7 @@ function changeButton(){
 }
 
 function limpaForm(){
+    foto.src = avatarUrl;
     document.getElementById("nomePaciente").value = "";
     document.getElementById("idadePaciente").value = "";
     document.getElementById("tratamento").value = "";

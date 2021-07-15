@@ -117,3 +117,17 @@ thead tr th {
     text-align: center;
     margin: 0px;
 }
+
+.inputimage {
+    display: none;
+}
+
+#edit {
+    color:#04D486;
+    cursor: pointer;
+}
+
+#delete {
+    color: red;
+    cursor: pointer;
+}

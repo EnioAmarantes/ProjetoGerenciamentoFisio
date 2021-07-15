@@ -1,2 +1,2 @@
-const editButton = "<button onclick='editPaciente(this)'>Editar</button>";
-const delButton = "<button onclick='delPaciente(this)'>Remover</button>";
+const editButton = "<span id='edit' onclick='edit(this)' class='material-icons mx-2'>mode_edit</span>";
+const delButton = "<span id='delete' onclick='del(this)' class='material-icons mx-2'>delete</span>";
