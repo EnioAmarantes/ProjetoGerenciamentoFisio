@@ -26,7 +26,6 @@ function carrega(){
 
     if(localStorage.getItem("tratamentos") != null)
         carregaTratamentos();
-        
 }
 
 function carregaPacientes(){

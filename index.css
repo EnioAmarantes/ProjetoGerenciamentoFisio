@@ -131,3 +131,8 @@ thead tr th {
     color: red;
     cursor: pointer;
 }
+
+#look {
+    color:#3E84DC;
+    cursor: pointer;
+}
