@@ -109,7 +109,7 @@ function addPaciente(idTabela){
         foto.src,
         document.getElementById("nomePaciente").value,
         document.getElementById("idadePaciente").value,
-        document.getElementById("tratamento").value,
+        document.getElementById("tratamentos").value,
         document.getElementById("prox_consulta").value
     );
 
@@ -142,7 +142,7 @@ function updatePaciente(idTabela){
         foto.src,
         document.getElementById("nomePaciente").value,
         document.getElementById("idadePaciente").value,
-        document.getElementById("tratamento").value,
+        document.getElementById("tratamentos").value,
         document.getElementById("prox_consulta").value
     );
 
@@ -172,7 +172,7 @@ function editPaciente(paciente){
 
     document.getElementById("nomePaciente").value = items.item(0).innerHTML;
     document.getElementById("idadePaciente").value = items.item(1).innerHTML;
-    document.getElementById("tratamento").value = items.item(2).innerHTML;
+    document.getElementById("tratamentos").value = items.item(2).innerHTML;
     document.getElementById("prox_consulta").value = items.item(3).innerHTML;
 }
 
@@ -203,7 +203,6 @@ function limpaForm(){
     foto.src = avatarUrl;
     document.getElementById("nomePaciente").value = "";
     document.getElementById("idadePaciente").value = "";
-    document.getElementById("tratamento").value = "";
     document.getElementById("prox_consulta").value = "";
 }
 

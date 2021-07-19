@@ -24,12 +24,12 @@
 </head>
 
 <body onload="carrega()">
-    <div class="container">
-        <div id="sidebar" class="sidebar col-3">
+    <div class="container-fluid justify-content-center row">
+        <div id="sidebar" class="sidebar">
             <div class="logo_content">
                 <div class="logo">
                     <span id="fisonet" class="material-icons mx-2">spa</span>
-                    <div class="logo_name">FisioNet</div>
+                    <div id="logo_name" class="logo_name">FisioNet</div>
                 </div>
                 <span id="btn" onclick="hide()" class="material-icons">menu</span>
             </div>
@@ -68,7 +68,7 @@
             </ul>
         </div>
 
-        <div id="container" class="col-9">
+        <div id="container" class="container justify-content-center">
             <form class="my-5">
                 <div class="form-group m-5">
                     <h2 class="text-center">Cadastro de Exames</h2>

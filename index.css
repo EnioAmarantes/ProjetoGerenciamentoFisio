@@ -36,12 +36,15 @@ thead tr th {
     color:#fff;
 }
 
+#container{
+    transition: 0.4s;
+}
 .sidebar {
     position: fixed;
     top:0;
     left:0;
     width: 240px;
-    height: 100%;
+    min-height: 100vh;
     background-color: #616161;
     padding: 6px 0px;
     transition: 0.4s;
@@ -84,6 +87,7 @@ thead tr th {
     text-align: center;
     line-height: 50px;
     transform: translateX(-50%);
+    cursor: pointer;
 }
 
 .sidebar ul{

@@ -269,8 +269,8 @@ function imageZoom(imgID, resultID) {
 class Exame{
     constructor(imagem, tipoExame, paciente, dataExame){
         this.imagem = imagem;
-        this.tipoExame = tipoExame;
         this.paciente = paciente;
         this.dataExame = dataExame;
+        this.tipoExame = tipoExame;
     }
 }

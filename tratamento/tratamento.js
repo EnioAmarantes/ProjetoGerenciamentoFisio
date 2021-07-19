@@ -58,7 +58,7 @@ function addTratamento(idTabela){
     celOpcao.className = "text-center";
 
     var tratamento = new Tratamento(
-        document.getElementById("tratamento").value,
+        document.getElementById("nomeTratamento").value,
         document.getElementById("indicacao").value,
         document.getElementById("descTratamento").value
     )
@@ -81,10 +81,13 @@ function updateTratamento(idTabela){
     var tabela = document.getElementById(idTabela).getElementsByTagName('tbody')[0];
     
     var linha = tabela.getElementsByTagName("tr")[indexRow -1].getElementsByTagName("td");
+    var celTratamento = linha.item(0);
+    var celIndicacao = linha.item(1);
+    var celDescricao = linha.item(2);
 
     let tratamento = new Tratamento(
-        document.getElementById("tratamento").value,
-        document.getElementById("indiciacao").value,
+        document.getElementById("nomeTratamento").value,
+        document.getElementById("indicacao").value,
         document.getElementById("descTratamento").value
     )
 
@@ -95,8 +98,6 @@ function updateTratamento(idTabela){
     tratamentos[indexRow - 1] = tratamento;
 
     window.localStorage.setItem("tratamentos", JSON.stringify(tratamentos));
-
-    celOpcao.innerHTML =  editButton + " " + delButton;
 
     limpaForm();
     voltaForm();
@@ -138,7 +139,7 @@ function changeButton(){
 }
 
 function limpaForm(){
-    document.getElementById("tratamento").value = "";
+    document.getElementById("nomeTratamento").value = "";
     document.getElementById("indicacao").value = "";
     document.getElementById("descTratamento").value = "";
 }

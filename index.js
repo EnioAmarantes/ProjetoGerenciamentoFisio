@@ -1,13 +1,24 @@
-var hided = true;
+var hided = false;
 
 function hide(){
+    let spans = document.getElementsByClassName("links_name");
     if(hided){
-        document.getElementById("sidebar").className = document.getElementById("sidebar").className.replace("col-3", "col-1");
-        document.getElementById("container").className = document.getElementById("container").className.replace("col-9", "col-11");
+        document.getElementById("sidebar").style.width = "240px";
+        document.getElementById("container").style.marginLeft = document.getElementById("sidebar").style.width;
+        document.getElementById("logo_name").style.visibility = "visible";
+        for(x = 0; x < spans.length; x++){
+            spans[x].style.visibility = "visible";
+        }
     }
     else{
-        document.getElementById("sidebar").className = document.getElementById("sidebar").className.replace("col-1", "col-3");
-        document.getElementById("container").className = document.getElementById("container").className.replace("col-11", "col-9");
+        document.getElementById("sidebar").style.width = "60px";
+        document.getElementById("container").style.marginLeft = document.getElementById("sidebar").style.width;
+        document.getElementById("logo_name").style.visibility = "hidden";
+        for(x = 0; x < spans.length; x++){
+            spans[x].style.visibility = "hidden";
+        }
     }
+
+    document.getElementById("container").style.left = document.getElementById("sidebar").style.width;
     hided = !hided;
 }
