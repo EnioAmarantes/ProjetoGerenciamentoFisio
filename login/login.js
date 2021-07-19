@@ -23,10 +23,10 @@ function artigo(id){
             window.open('https://www.rbmt.org.br/details/1583/pt-BR/covid-19--a-importancia-da-fisioterapia-na-recuperacao-da-saude-do-trabalhador');
             break;
         case 2:
-            window.open('https://wwww.google.com.br');
+            window.open('https://www.rbmt.org.br/details/1592/pt-BR/disturbios-musculoesqueleticos-relacionados-ao-trabalho-de-professores');
             break;
         case 3:
-            window.open('https://www.google.com.br');
+            window.open('https://www.rbmt.org.br/details/1590/pt-BR/influencia-da-ginastica-laboral-no-desempenho-cognitivo-de-trabalhadores');
             break;
         default:
             alert("link para o artigo não encontrado.");
