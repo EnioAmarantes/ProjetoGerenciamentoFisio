@@ -10,6 +10,13 @@ a {
     margin: 10px;
 }
 
+h2 {
+    width: 100%;
+    text-align: center;
+    background-color: #04D486;
+    color: #fff;
+}
+
 thead tr {
     background-color: #04D486;
 }
