@@ -5,7 +5,7 @@ var diagnosticos = [];
 var pacientes = [];
 
 function carrega(){
-    document.getElementById("container").style.marginLeft = document.getElementById("sidebar").style.width;
+    document.getElementById("container").style.marginLeft = "240px";
     
     if(localStorage.getItem("diagnosticos") != null)
         carregaDiagnosticos();

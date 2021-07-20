@@ -36,18 +36,26 @@ thead tr th {
     color:#fff;
 }
 
+#fisioLogo {
+    max-width: 150px;
+}
+
 #container{
     transition: 0.4s;
+    width: calc(100% - 60px);
+    position: unset !important;
+    z-index: 1;
 }
 .sidebar {
     position: fixed;
     top:0;
-    left:0;
-    width: 240px;
+    left:0; 
+     width: 240px;
     min-height: 100vh;
     background-color: #616161;
     padding: 6px 0px;
     transition: 0.4s;
+    z-index: 2;
 }
 
 .sidebar .logo_content .logo {
