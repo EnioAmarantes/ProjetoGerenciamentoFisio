@@ -21,6 +21,7 @@ const imgOpt = {
 };
 
 function carrega(){
+
     if(localStorage.getItem("pacientes") != null)
         carregaPacientes();
 

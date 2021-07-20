@@ -19,6 +19,6 @@ function hide(){
         }
     }
 
-    document.getElementById("container").style.left = document.getElementById("sidebar").style.width;
+    document.getElementById("container").style.left = (document.getElementById("sidebar").style.width * 2);
     hided = !hided;
 }

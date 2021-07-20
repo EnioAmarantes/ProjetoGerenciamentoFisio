@@ -21,90 +21,94 @@
 </head>
 
 <body onload="carrega()">
-    <div id="sidebar" class="sidebar col-3">
-        <div class="logo_content">
-            <div class="logo">
-                <span id="fisonet" class="material-icons mx-2">spa</span>
-                <div id="logo_name" class="logo_name">FisioNet</div>
+    <div class="container-fluid justify-content-center p-0 row">
+        <div id="sidebar" class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <span id="fisonet" class="material-icons mx-2">spa</span>
+                    <div id="logo_name" class="logo_name">FisioNet</div>
+                </div>
+                <span id="btn" onclick="hide()" class="material-icons">menu</span>
             </div>
-            <span id="btn" onclick="hide()" class="material-icons">menu</span>
+            <ul class="nav_list">
+                <li>
+                    <a href="../pacientes/paciente.html">
+                        <span id="pacientes" class="material-icons mx-2">person</span>
+                        <span class="links_name">Pacientes</span>
+                    </a>
+                    <!-- <span class="tooltip">Pacientes</span> -->
+                </li>
+
+                <li>
+                    <a href="../exames/exames.html">
+                        <span id="exames" class="material-icons mx-2">biotech</span>
+                        <span class="links_name">Exames</span>
+                    </a>
+                    <!-- <span class="tooltip">Pacientes</span> -->
+                </li>
+
+                <li>
+                    <a href="../diagnostico/diagnostico.html">
+                        <span id="diagnostico" class="material-icons mx-2">sick</span>
+                        <span class="links_name">Diagnósticos</span>
+                    </a>
+                    <!-- <span class="tooltip">Pacientes</span> -->
+                </li>
+
+                <li>
+                    <a href="../tratamento/tratamento.html">
+                        <span id="tratamento" class="material-icons mx-2">settings_backup_restore</span>
+                        <span class="links_name">Tratamentos</span>
+                    </a>
+                    <!-- <span class="tooltip">Pacientes</span> -->
+                </li>
+            </ul>
         </div>
-        <ul class="nav_list">
-            <li>
-                <a href="../pacientes/paciente.html">
-                    <span id="pacientes" class="material-icons mx-2">person</span>
-                    <span class="links_name">Pacientes</span>
-                </a>
-                <!-- <span class="tooltip">Pacientes</span> -->
-            </li>
 
-            <li>
-                <a href="../exames/exames.html">
-                    <span id="exames" class="material-icons mx-2">biotech</span>
-                    <span class="links_name">Exames</span>
-                </a>
-                <!-- <span class="tooltip">Pacientes</span> -->
-            </li>
-
-            <li>
-                <a href="../diagnostico/diagnostico.html">
-                    <span id="diagnostico" class="material-icons mx-2">sick</span>
-                    <span class="links_name">Diagnósticos</span>
-                </a>
-                <!-- <span class="tooltip">Pacientes</span> -->
-            </li>
-
-            <li>
-                <a href="../tratamento/tratamento.html">
-                    <span id="tratamento" class="material-icons mx-2">settings_backup_restore</span>
-                    <span class="links_name">Tratamentos</span>
-                </a>
-                <!-- <span class="tooltip">Pacientes</span> -->
-            </li>
-        </ul>
-    </div>
-
-    <div id="container" class="container col-9">
-        <form class="my-5">
-            <div class="form-group m-5">
-                <h2 class="text-center">Cadastro de Pacientes</h2>
-                <div class="row my-3">
-                    <div class="col-4">
-                        <div>
-                            <img id="avatar" class="card-img" src="../compartilhado/images/avatares/avatar-002.jpg"
-                                alt="Imagem Aqui" />
-                            <button class="btn btn-login" type="button" onclick="tireFoto()">Tire uma foto</button>
+        <div id="container" class="container col-8">
+            <form class="my-5">
+                <div class="form-group m-5">
+                    <h2 class="text-center">Cadastro de Pacientes</h2>
+                    <div class="row my-3">
+                        <div class="col-md-4 col-xs-12">
+                            <div>
+                                <img id="avatar" class="card-img" src="../compartilhado/images/avatares/avatar-002.jpg"
+                                    alt="Imagem Aqui" />
+                                <button class="btn btn-login" type="button" onclick="tireFoto()">Tire uma foto</button>
+                            </div>
+                        </div>
+                        <div class="block col-8">
+                            <input id="nomePaciente" class="form-control my-2" type="text"
+                                placeholder="Nome do paciente" />
+                            <input id="idadePaciente" class="form-control my-2" type="number" placeholder="Idade" />
+                            <label for="tratamentos">Tratamento</label>
+                            <select id="tratamentos" class="form-control my-2">
+                            </select>
+                            <label class="" for="prox_consulta">Próxima Conulta</label>
+                            <input id="prox_consulta" class="form-control my-2" type="date" />
                         </div>
                     </div>
-                    <div class="block col-8">
-                        <input id="nomePaciente" class="form-control my-2" type="text" placeholder="Nome do paciente" />
-                        <input id="idadePaciente" class="form-control my-2" type="number" placeholder="Idade" />
-                        <label for="tratamentos">Tratamento</label>
-                        <select id="tratamentos" class="form-control my-2">
-                        </select>
-                        <label class="" for="prox_consulta">Próxima Conulta</label>
-                        <input id="prox_consulta" class="form-control my-2" type="date" />
-                    </div>
                 </div>
-            </div>
-            <button id="btnPaciente" type="button" class="btn btn-login my-2" onClick="registra()">Cadastrar</button>
-        </form>
+                <button id="btnPaciente" type="button" class="btn btn-login my-2"
+                    onClick="registra()">Cadastrar</button>
+            </form>
 
-        <table id="pacientesTab" class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                    <th>Idade</th>
-                    <th>Tratamento</th>
-                    <th>Próxima Consulta</th>
-                    <th class="text-center">Opções</th>
-                </tr>
-            </thead>
+            <table id="pacientesTab" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Idade</th>
+                        <th>Tratamento</th>
+                        <th>Próxima Consulta</th>
+                        <th class="text-center">Opções</th>
+                    </tr>
+                </thead>
 
-            <tbody>
+                <tbody>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script type="text/javascript" src="../index.js"></script>

@@ -4,6 +4,8 @@ var indexRow = 0;
 var tratamentos = [];
 
 function carrega(){
+    document.getElementById("container").style.marginLeft = document.getElementById("sidebar").style.width;
+
     if(localStorage.getItem("tratamentos") != null)
         carregaTratamentos();
 }
@@ -109,7 +111,7 @@ function editTratamento(tratamento){
     changeButton();
     var items = tratamento.parentNode.parentNode.cells;
 
-    document.getElementById("tratamento").value = items.item(0).innerHTML;
+    document.getElementById("nomeTratamento").value = items.item(0).innerHTML;
     document.getElementById("indicacao").value = items.item(1).innerHTML;
     document.getElementById("descTratamento").value = items.item(2).innerHTML;
 }

@@ -20,79 +20,82 @@
 </head>
 
 <body onload="carrega()">
-    <div id="sidebar" class="sidebar col-3">
-        <div class="logo_content">
-            <div class="logo">
-                <span id="fisonet" class="material-icons mx-2">spa</span>
-                <div id="logo_name" class="logo_name">FisioNet</div>
+    <div class="container-fluid p-0 row">
+        <div id="sidebar" class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <span id="fisonet" class="material-icons mx-2">spa</span>
+                    <div id="logo_name" class="logo_name">FisioNet</div>
+                </div>
+                <span id="btn" onclick="hide()" class="material-icons">menu</span>
             </div>
-            <span id="btn" onclick="hide()" class="material-icons">menu</span>
+            <ul class="nav_list">
+                <li>
+                    <a href="../pacientes/paciente.html">
+                        <span id="pacientes" class="material-icons mx-2">person</span>
+                        <span class="links_name">Pacientes</span>
+                    </a>
+                    <!-- <span class="tooltip">Pacientes</span> -->
+                </li>
+
+                <li>
+                    <a href="../exames/exames.html">
+                        <span id="exames" class="material-icons mx-2">biotech</span>
+                        <span class="links_name">Exames</span>
+                    </a>
+                    <!-- <span class="tooltip">Pacientes</span> -->
+                </li>
+
+                <li>
+                    <a href="../diagnostico/diagnostico.html">
+                        <span id="diagnostico" class="material-icons mx-2">sick</span>
+                        <span class="links_name">Diagnósticos</span>
+                    </a>
+                    <!-- <span class="tooltip">Pacientes</span> -->
+                </li>
+
+                <li>
+                    <a href="../tratamento/tratamento.html">
+                        <span id="tratamento" class="material-icons mx-2">settings_backup_restore</span>
+                        <span class="links_name">Tratamentos</span>
+                    </a>
+                    <!-- <span class="tooltip">Pacientes</span> -->
+                </li>
+            </ul>
         </div>
-        <ul class="nav_list">
-            <li>
-                <a href="../pacientes/paciente.html">
-                    <span id="pacientes" class="material-icons mx-2">person</span>
-                    <span class="links_name">Pacientes</span>
-                </a>
-                <!-- <span class="tooltip">Pacientes</span> -->
-            </li>
 
-            <li>
-                <a href="../exames/exames.html">
-                    <span id="exames" class="material-icons mx-2">biotech</span>
-                    <span class="links_name">Exames</span>
-                </a>
-                <!-- <span class="tooltip">Pacientes</span> -->
-            </li>
+        <div id="container" class="container justify-content-center col-8">
+            <form class="my-5">
+                <div class="form-group m-5">
+                    <h2 class="text-center">Tela de Tratamentos</h2>
 
-            <li>
-                <a href="../diagnostico/diagnostico.html">
-                    <span id="diagnostico" class="material-icons mx-2">sick</span>
-                    <span class="links_name">Diagnósticos</span>
-                </a>
-                <!-- <span class="tooltip">Pacientes</span> -->
-            </li>
+                    <input id="nomeTratamento" class="form-control my-2" type="text" placeholder="Tratamento" />
 
-            <li>
-                <a href="../tratamento/tratamento.html">
-                    <span id="tratamento" class="material-icons mx-2">settings_backup_restore</span>
-                    <span class="links_name">Tratamentos</span>
-                </a>
-                <!-- <span class="tooltip">Pacientes</span> -->
-            </li>
-        </ul>
-    </div>
+                    <input id="indicacao" class="form-control my-2" type="text" placeholder="Indicação" />
 
-    <div id="container" class="container">
-        <form class="my-5">
-            <div class="form-group m-5">
-                <h2 class="text-center">Tela de Tratamentos</h2>
+                    <lable for="descTratamento">Descrição do Tratamento</lable>
+                    <textarea id="descTratamento" class="form-control rounded-0 my-2" rows="3"></textarea>
 
-                <input id="nomeTratamento" class="form-control my-2" type="text" placeholder="Tratamento" />
+                </div>
 
-                <input id="indicacao" class="form-control my-2" type="text" placeholder="Indicação" />
+                <button id="btnTratamento" type="button" class="btn btn-login my-2"
+                    onclick="registra()">Cadastrar</button>
+            </form>
 
-                <lable for="descTratamento">Descrição do Tratamento</lable>
-                <textarea id="descTratamento" class="form-control rounded-0 my-2" rows="3"></textarea>
+            <table id="tratamentosTab" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Tratamento</th>
+                        <th>Indicação</th>
+                        <th>Descrição</th>
+                        <th class="text-center">Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-            </div>
-
-            <button id="btnTratamento" type="button" class="btn btn-login my-2" onclick="registra()">Cadastrar</button>
-        </form>
-
-        <table id="tratamentosTab" class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Tratamento</th>
-                    <th>Indicação</th>
-                    <th>Descrição</th>
-                    <th class="text-center">Opções</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script type="text/javascript" src="../index.js"></script>

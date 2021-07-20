@@ -21,90 +21,94 @@
 </head>
 
 <body onload="carrega()">
-    <div id="sidebar" class="sidebar">
-        <div class="logo_content">
-            <div class="logo">
-                <span id="fisonet" class="material-icons mx-2">spa</span>
-                <div id="logo_name" class="logo_name">FisioNet</div>
+    <div class="container-fluid p-0 row">
+        <div id="sidebar" class="sidebar">
+            <div class="logo_content">
+                <div class="logo">
+                    <span id="fisonet" class="material-icons mx-2">spa</span>
+                    <div id="logo_name" class="logo_name">FisioNet</div>
+                </div>
+                <span id="btn" onclick="hide()" class="material-icons">menu</span>
             </div>
-            <span id="btn" onclick="hide()" class="material-icons">menu</span>
+            <ul class="nav_list">
+                <li>
+                    <a href="../pacientes/paciente.html">
+                        <span id="paciente" class="material-icons mx-2">person</span>
+                        <span class="links_name">Pacientes</span>
+                    </a>
+                    <!-- <span class="tooltip">Pacientes</span> -->
+                </li>
+
+                <li>
+                    <a href="../exames/exames.html">
+                        <span id="exames" class="material-icons mx-2">biotech</span>
+                        <span class="links_name">Exames</span>
+                    </a>
+                    <!-- <span class="tooltip">Pacientes</span> -->
+                </li>
+
+                <li>
+                    <a href="../diagnostico/diagnostico.html">
+                        <span id="diagnosticos" class="material-icons mx-2">sick</span>
+                        <span class="links_name">Diagnósticos</span>
+                    </a>
+                    <!-- <span class="tooltip">Pacientes</span> -->
+                </li>
+
+                <li>
+                    <a href="../tratamento/tratamento.html">
+                        <span id="tratamento" class="material-icons mx-2">settings_backup_restore</span>
+                        <span class="links_name">Tratamentos</span>
+                    </a>
+                    <!-- <span class="tooltip">Pacientes</span> -->
+                </li>
+            </ul>
         </div>
-        <ul class="nav_list">
-            <li>
-                <a href="../pacientes/paciente.html">
-                    <span id="paciente" class="material-icons mx-2">person</span>
-                    <span class="links_name">Pacientes</span>
-                </a>
-                <!-- <span class="tooltip">Pacientes</span> -->
-            </li>
 
-            <li>
-                <a href="../exames/exames.html">
-                    <span id="exames" class="material-icons mx-2">biotech</span>
-                    <span class="links_name">Exames</span>
-                </a>
-                <!-- <span class="tooltip">Pacientes</span> -->
-            </li>
+        <div id="container" class="container justify-content-center col-8">
+            <form class="my-5">
+                <div class="form-group m-5">
+                    <h2 class="text-center">Tela de Diagnósticos</h2>
 
-            <li>
-                <a href="../diagnostico/diagnostico.html">
-                    <span id="diagnosticos" class="material-icons mx-2">sick</span>
-                    <span class="links_name">Diagnósticos</span>
-                </a>
-                <!-- <span class="tooltip">Pacientes</span> -->
-            </li>
+                    <label class="" for="dataDiagnostico">Data Diagnóstico</label>
+                    <input id="dataDiagnostico" class="form-control my-2" type="date" />
 
-            <li>
-                <a href="../tratamento/tratamento.html">
-                    <span id="tratamento" class="material-icons mx-2">settings_backup_restore</span>
-                    <span class="links_name">Tratamentos</span>
-                </a>
-                <!-- <span class="tooltip">Pacientes</span> -->
-            </li>
-        </ul>
-    </div>
+                    <label for="pacientes">Paciente</label>
+                    <select class="form-control my-2" name="paciente" id="pacientes">
+                    </select>
 
-    <div id="container" class="container">
-        <form class="my-5">
-            <div class="form-group m-5">
-                <h2 class="text-center">Tela de Diagnósticos</h2>
+                    <lable for="reclamacaoPaciente">Reclamações do Paciente</lable>
+                    <textarea id="reclamacao" class="form-control rounded-0 my-2" rows="3"></textarea>
 
-                <label class="" for="dataDiagnostico">Data Diagnóstico</label>
-                <input id="dataDiagnostico" class="form-control my-2" type="date" />
+                    <lable for="testeRealizado">Testes Realizados</lable>
+                    <textarea id="testes" class="form-control rounded-0 my-2" rows="3"></textarea>
 
-                <label for="pacientes">Paciente</label>
-                <select class="form-control my-2" name="paciente" id="pacientes">
-                </select>
+                    <lable for="diagnostico">Diagnóstico</lable>
+                    <textarea id="diagnostico" class="form-control rounded-0 my-2" rows="3"></textarea>
+                </div>
 
-                <lable for="reclamacaoPaciente">Reclamações do Paciente</lable>
-                <textarea id="reclamacao" class="form-control rounded-0 my-2" rows="3"></textarea>
+                <button id="btnDiagnostico" type="button" class="btn btn-login my-2"
+                    onclick="registra()">Cadastrar</button>
+            </form>
 
-                <lable for="testeRealizado">Testes Realizados</lable>
-                <textarea id="testes" class="form-control rounded-0 my-2" rows="3"></textarea>
+            <table id="diagnosticosTab" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Reclamações</th>
+                        <th>Data Diagnóstico</th>
+                        <th>Diagnóstico</th>
+                        <th class="text-center">Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                <lable for="diagnostico">Diagnóstico</lable>
-                <textarea id="diagnostico" class="form-control rounded-0 my-2" rows="3"></textarea>
-            </div>
-
-            <button id="btnDiagnostico" type="button" class="btn btn-login my-2" onclick="registra()">Cadastrar</button>
-        </form>
-
-        <table id="diagnosticosTab" class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Paciente</th>
-                    <th>Reclamações</th>
-                    <th>Data Diagnóstico</th>
-                    <th>Diagnóstico</th>
-                    <th class="text-center">Opções</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script type="text/javascript" src="../index.js"></script>
 </body>
+
 </html>

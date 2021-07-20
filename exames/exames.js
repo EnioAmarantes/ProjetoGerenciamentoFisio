@@ -21,6 +21,8 @@ const imgOpt = {
 };
 
 function carrega(){
+    document.getElementById("container").style.marginLeft = document.getElementById("sidebar").style.width;
+    
     if(localStorage.getItem("pacientes") != null)
         carregaPacientes();
 
